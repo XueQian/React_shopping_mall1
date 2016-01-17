@@ -38,9 +38,16 @@ module.exports = function(grunt) {
                     spawn: false
                 }
             }
+        },
+
+        eslint: {
+            target: [
+                //'Gruntfile.js',
+                'src/js/*.js'
+            ]
         }
     });
 
     grunt.registerTask('dev', ['express', 'watch']);
-
+    grunt.registerTask('test', ['eslint']);
 };
