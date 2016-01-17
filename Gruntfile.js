@@ -45,9 +45,16 @@ module.exports = function(grunt) {
                 //'Gruntfile.js',
                 'src/js/*.js'
             ]
-        }
+        },
+        jest: {
+            all: {
+                config: 'package.json',
+                coverage: true,
+                testPathPattern: /.*-test.js/
+            }
+        },
     });
 
     grunt.registerTask('dev', ['express', 'watch']);
-    grunt.registerTask('test', ['eslint']);
+    grunt.registerTask('test', ['jest']);
 };
