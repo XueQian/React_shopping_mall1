@@ -10,7 +10,7 @@ var Router = React.createClass({
     render: function() {
         return (
             Locations(null,
-                Location({path: "/", handler: require('./client/jsx/ItemList.jsx')})
+                Location({path: "/", handler: require('./ItemList.jsx')})
             )
         )
     }
