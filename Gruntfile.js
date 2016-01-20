@@ -10,7 +10,7 @@ module.exports = function(grunt) {
                 watch: true
             },
             app: {
-                src: ['src/jsx/**/*.jsx'],
+                src: ['src/jsx/*.jsx'],
                 dest: 'assets/js/scripts.js'
             }
         },
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         express: {
             dev: {
                 options: {
-                    script: 'src/js/app.js'
+                    script: 'app.js'
                 }
             }
         },
@@ -53,8 +53,15 @@ module.exports = function(grunt) {
                 testPathPattern: /.*-test.js/
             }
         },
+        copy: {
+            css: {expand: true, cwd: 'src/css/', src: '*', dest: 'assets/css/', filter: 'isFile'},
+            json: {expand: true, cwd: 'src/json/', src: '*', dest: 'assets/json/', filter: 'isFile'},
+            html: {expand: true, cwd: 'src/', src: 'index.html', dest: 'assets/', filter: 'isFile'},
+            imgs: {expand: true, cwd: 'src/imgs/', src: '*', dest: 'assets/imgs/', filter: 'isFile'}
+        },
+        clean: ['assets']
     });
 
-    grunt.registerTask('dev', ['express', 'watch']);
+    grunt.registerTask('dev', ['clean', 'copy', 'browserify','express', 'watch']);
     grunt.registerTask('test', ['jest']);
 };

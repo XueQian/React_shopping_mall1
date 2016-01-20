@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "item1",
+      "price": "100",
+      "image": "../imgs/F1.png"
+    },
+    {
+      "id": 2,
+      "name": "item2",
+      "price": "200",
+      "image": "../imgs/F2.png"
+    },
+    {
+      "id": 3,
+      "name": "item3",
+      "price": "100",
+      "image": "../imgs/F3.png"
+    },
+    {
+      "id": 4,
+      "name": "item4",
+      "price": "100",
+      "image": "../imgs/F4.png"
+    },
+    {
+      "id": 5,
+      "name": "item5",
+      "price": "100",
+      "image": "../imgs/F5.png"
+    }
+  ]
+}
